@@ -1,0 +1,36 @@
+{
+    "users": {
+        "killigrew": {
+            "first_name": "Johan",
+            "last_name": "Killigrew",
+        },
+
+        "Aten": {
+            "first_name": "Akoben",
+            "last_name": "Aten",
+        },
+
+        "Lewis": {
+            "first_name": "Aemero",
+            "last_name": "Lewis",
+
+        }
+    },
+    "Meditation": {
+        "What the Buddha Taught": {
+            "title": "What the Buddha Taught",
+            "url": "https://www.amazon.com/What-Buddha-Taught-Expanded-Dhammapada/dp/0802130313/ref=sr_1_1?s=books&ie=UTF8&qid=1486496262&sr=1-1&keywords=what+the+buddha+taught",
+            "img": "http://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328824084i/390562._UY475_SS475_.jpg",
+        },
+        "Metu Neter": {
+            "title": "Metu Neter",
+            "url": "https://www.amazon.com/Metu-Neter-Vol-Spiritual-Cultivation/dp/1877662038/ref=sr_1_2?s=books&ie=UTF8&qid=1486496078&sr=1-2&keywords=metu+neter+volume+1",
+            "img": "http://images.gr-assets.com/books/1387719275l/1794357.jpg",
+        },
+        "The Tao of Meditation": {
+            "title": "The Tao of Meditation",
+            "url": "https://www.amazon.com/Tao-Meditation-Way-Enlightenment/dp/0804814651",
+            "img": "http://images.gr-assets.com/books/1364137507l/238741.jpg"
+        }
+    }
+}

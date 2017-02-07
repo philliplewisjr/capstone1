@@ -20,7 +20,7 @@ app.config(function($routeProvider, $locationProvider){
       controller: 'LifeCtrl',
       templateUrl: 'partials/lifeStyle.html'
     })
-    .whne('/coach', {
+    .when('/coach', {
       controller: 'CoachCtrl',
       templateUrl: 'partials/coach.html'
     })
@@ -28,9 +28,12 @@ app.config(function($routeProvider, $locationProvider){
       controller: 'CommunityCtrl',
       templateUrl: 'partials/community.html'
     })
-    .when('/user' {
+    .when('/user', {
       controller: 'UserCtrl',
       templateUrl: 'partials/user.html'
+    })
+    .otherwise({
+    redirectTo: '/'
     })
 
 
