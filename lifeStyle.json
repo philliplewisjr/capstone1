@@ -1,0 +1,19 @@
+{
+"LifeStyle": {
+        "You are Your Own Gym": {
+            "title": "You Are Your Own Gym",
+            "url": "https://www.amazon.com/You-Are-Your-Own-Gym/dp/0345528581",
+            "img": "http://images.foyles.co.uk/xlarge/books/img/0/0/9/9780091955427.jpg"
+        },
+        "Kemetic Diet": {
+            "title": "Kemetic Diet Holistic Egyptian Teachings",
+            "url": "https://www.amazon.com/Kemetic-Diet-Holistic-Egyptian-Teachings/dp/1884564496/ref=sr_1_1?s=books&ie=UTF8&qid=1486584334&sr=1-1&keywords=Kemetic+diet",
+            "img": "https://images-na.ssl-images-amazon.com/images/I/51ckp1SMx8L._SY344_BO1,204,203,200_.jpg"
+        },
+        "Ageless Body Timeless Mind": {
+            "title": "Ageless Body Timeless Mind",
+            "url": "https://www.amazon.com/Ageless-Body-Timeless-Mind-Alternative/dp/0517882124",
+            "img": "https://images-na.ssl-images-amazon.com/images/I/51ZYMnfYdfL._SX321_BO1,204,203,200_.jpg"
+        }
+    }
+}
