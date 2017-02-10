@@ -15,11 +15,17 @@
 
 .verticalLine {
   backgroud-color: black;
-  height: 600px;
+  height: 800px;
   border-left: solid grey;
-  border-left-width: .5px;
+  border-left-width: .1px;
   min-height: 500px;
   margin-right: auto;
+  border-right: solid grey;
+  border-right-width: .1px;
+  border-top: solid grey;
+  border-top-width: .1px;
+  border-bottom: solid grey;
+  border-bottom-width: .1px;
 }
 
 .fixed {

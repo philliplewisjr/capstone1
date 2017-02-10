@@ -8,4 +8,13 @@ app.controller('LifeCtrl', function($scope, $location, lifeStyleFactory) {
     console.log(lifeCateg)
     $scope.lifeCategory = lifeCateg
   })
+  $scope.lifeSource = function () {
+    console.log('life button pressed')
+    let lifeOptions = {
+      title: $scope.titleTextBox,
+      url: $scope.urlTextBox,
+      img: $scope.imgUrlTextBox
+    }
+    console.log(lifeOptions)
+  }
 })

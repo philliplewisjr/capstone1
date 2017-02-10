@@ -1,13 +1,13 @@
 <h2 class="description">Still Waters LifeStyle</h2>
 <div class="row">
-<div class="resources col s6">
+<div class="resources col s4">
   <div ng-repeat="life in lifeCategory.LifeStyle"class="card fixed">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="{{life.img}}">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">{{life.title}}<i class="material-icons right">more_vert</i></span>
-      <p><a href="{{life.url}}">This is a link</a></p>
+      <p><a href="{{life.url}}">More Info</a></p>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -17,8 +17,33 @@
 </div>
 
 <!-- separating line between text and scrollable -->
-<div class="verticalLine col s6">
+  <div class="verticalLine col s4">
 
-<p>I wander what this looks like</p>
-</div>
+    <p>I wander what this looks like</p>
+  </div>
+  <div class="col s4">
+    <form ng-submit="lifeSource()" class="black-text border-top">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input ng-model="titleTextBox" type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">URL</label>
+      <input ng-model="urlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image URL</label>
+      <input ng-model="imageUrlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    </div>
+
+    <div class="form-group">
+      <button  type="submit" class="btn btn-default">Submit</button>
+    </div>
+
+  </form>
+  </div>
 </div>

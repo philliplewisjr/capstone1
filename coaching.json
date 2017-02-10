@@ -1,0 +1,19 @@
+{
+    "Coaching": {
+        "Isha Foundation": {
+            "title": "Isha Foundation",
+            "url": "http://www.ishafoundation.org/us/blog/tennessee-center/",
+            "img": "hhttp://www.ishafoundation.org/ca/wp-content/uploads/2013/09/main_rotater_6.jpg"
+        },
+        "Fitness": {
+            "title": "Made Fitness",
+            "url": "https://www.madefitnesstn.com/",
+            "img": "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11386460_1634036890167914_1782226714_n.jpg"
+        },
+        "Sauna": {
+            "title": "Jeju Sauna",
+            "url": "http://jejusauna.com/",
+            "img": "http://jejusauna.com/wp-content/uploads/2016/02/12637263_10206812201756523_157939005_o.jpg"
+        }
+    }
+}
