@@ -1,7 +1,7 @@
 
 
 
-app.controller('MeditationCtrl', function($scope, $location, meditationFactory) {
+app.controller('MeditationCtrl', function($scope, $location, meditationFactory, $http) {
   console.log('Meditation controller')
   meditationFactory.getData()
   .then((data)=> {
@@ -12,6 +12,7 @@ app.controller('MeditationCtrl', function($scope, $location, meditationFactory) 
     $scope.books = books
 
   })
+  //create new source 
   $scope.meditationSource = function () {
     console.log('button clicked')
     let sources = {
@@ -20,5 +21,8 @@ app.controller('MeditationCtrl', function($scope, $location, meditationFactory) 
       img: $scope.imgUrlTextBox
     }
     console.log(sources)
+
+    //updates meditation sources
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/Meditation.json`, JSON.stringify(sources))
   };
 })

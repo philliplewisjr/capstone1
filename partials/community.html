@@ -1,13 +1,13 @@
 <h2 class="description">Still Waters Community Activity</h2>
 <div class="row">
 <div class="resources col s4">
-  <div class="card fixed">
+  <div ng-repeat="(key, value) in communities" class="card fixed">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="images/office.jpg">
+      <img class="activator" src="{{value.img}}">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right"></i></span>
-      <p><a href="#">More Info</a></p>
+      <span class="card-title activator grey-text text-darken-4">{{value.title}}<i class="material-icons right"></i></span>
+      <p><a href="{{value.url}}">More Info</a></p>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
@@ -23,23 +23,25 @@
 </div>
 <div class="col s4">
     <form ng-submit="communitySource()" class="black-text border-top">
+        <!-- title input -->
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
       <input ng-model="titleTextBox" type="text" class="form-control" id="exampleInputEmail1" placeholder="">
     </div>
 
-
+      <!-- source link -->
     <div class="form-group">
       <label for="exampleInputPassword1">URL</label>
       <input ng-model="urlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
     </div>
 
-
+      <!-- image URL -->
     <div class="form-group">
       <label for="exampleInputPassword1">Image URL</label>
-      <input ng-model="imageUrlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+      <input ng-model="imgUrlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
     </div>
 
+     <!-- submit button to create new content -->
     <div class="form-group">
       <button  type="submit" class="btn btn-default">Submit</button>
     </div>

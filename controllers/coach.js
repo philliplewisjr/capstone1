@@ -1,5 +1,5 @@
 
-app.controller('CoachCtrl', function($scope, $location, coachingFactory){
+app.controller('CoachCtrl', function($scope, $location, coachingFactory, $http){
   coachingFactory.getCoach()
   .then((data)=>{
     console.log(data.data)
@@ -15,5 +15,6 @@ app.controller('CoachCtrl', function($scope, $location, coachingFactory){
       img: $scope.imgUrlTextBox
     }
     console.log(headCoach)
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/Coaching.json`, JSON.stringify(headCoach))
   }
 })
