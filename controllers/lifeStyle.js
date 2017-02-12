@@ -16,6 +16,6 @@ app.controller('LifeCtrl', function($scope, $location, lifeStyleFactory, $http) 
       img: $scope.imgUrlTextBox
     }
     console.log(lifeOptions)
-    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/LifeStyle/-KcUTFUfQM9b-yuOg6ah.json`, JSON.stringify(lifeOptions))
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/LifeStyle/-KcUTFUfQM9b-yuOg6ah/LifeStyle.json`, JSON.stringify(lifeOptions))
   }
 })
