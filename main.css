@@ -45,6 +45,13 @@
   margin-top: 20px;
 }
 
+/*.frame {
+  border: .1px solid grey;
+  min-height: 200px;
+  min-width: 300px;
+  margin-top: 20px;
+}*/
+
 .journal {
   border: .1px solid grey;
   min-height: 300px;
@@ -52,9 +59,8 @@
   margin-top: 100px;
 }
 
-.button1 {
-  /*margin-top: 70px;*/
-  /*margin-left: 100px;*/
+.journalButton {
+  margin-top: 70px;
 }
 
 
