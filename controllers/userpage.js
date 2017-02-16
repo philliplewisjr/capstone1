@@ -10,6 +10,8 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
     $scope.entries = journalEntries;
 
   })
+  $scope.editing = true;
+  $scope.editMode = true;
 
   //graph stat tracker
   $scope.labels = ['Meditation', 'LifeStyle', 'Coaching', 'Community'];
@@ -63,10 +65,42 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
   }
 
   //edit journal
-  $scope.editJournal = function (){
-    console.log('edit button clicked')
-    $scope.notEditing = true;
-  }
+  $scope.editJournal = function (key){
+
+    //console.log('edit button clicked')
+    $scope.key = key
+    console.log(key)
+    if ($scope.editing === true) {
+      $scope.editing = false
+    }
+      else if ($scope.editing === false) {
+        $scope.editing = true;
+      }
+    }
+
+    $scope.save = function (key, value) {
+      $scope.key = key
+      console.log(value)
+
+
+
+      console.log("key", key)
+      $http.patch(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/journal/${key}.json`, JSON.stringify(value))
+      .then((data)=>{
+        console.log(data)
+        $http.get(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/journal.json`)
+        .then((data)=>{
+          console.log(data.data)
+          let journalEntries = data.data;
+          console.log(journalEntries)
+          $scope.entries = journalEntries;
+        })
+      })
+
+    }
+
+
+
 
 
     let today = new Date()

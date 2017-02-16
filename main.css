@@ -18,6 +18,9 @@
   max-width: 400px;
   overflow: auto;
 }
+.sources {
+  margin-right: 100px;
+}
 
 .verticalLine {
   backgroud-color: black;
@@ -38,16 +41,16 @@
   margin-left: 50px;
 }
 
-.container {
+/*.container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+}*/
 
 .interest {
   border: .1px solid grey;
-  max-height: 300px;
-  max-width: 500px;
+  min-height: 300px;
+  min-width: 500px;
   margin-top: 20px;
   overflow: auto;
 }
@@ -76,6 +79,7 @@
   height: 770px;
   width: 500px;
   margin-top: 20px;
+  margin-left: 100px;
 }
 
 .east {
