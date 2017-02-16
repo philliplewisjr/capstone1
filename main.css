@@ -6,6 +6,12 @@
   margin-top: 100px;
 }*/
 
+.general {
+  borger-right: solid grey;
+  border-left: solid grey;
+  border-top: solid grey;
+  border-bottom: solid grey;
+}
 
 .resources {
   max-height: 1000px;
@@ -40,9 +46,10 @@
 
 .interest {
   border: .1px solid grey;
-  min-height: 300px;
-  min-width: 500px;
+  max-height: 300px;
+  max-width: 500px;
   margin-top: 20px;
+  overflow: auto;
 }
 
 /*.frame {
@@ -69,4 +76,8 @@
   height: 770px;
   width: 500px;
   margin-top: 20px;
+}
+
+.east {
+  margin-left: 10px;
 }

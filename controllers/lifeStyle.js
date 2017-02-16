@@ -18,4 +18,8 @@ app.controller('LifeCtrl', function($scope, $location, lifeStyleFactory, $http) 
     console.log(lifeOptions)
     $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/LifeStyle/-KcUTFUfQM9b-yuOg6ah/LifeStyle.json`, JSON.stringify(lifeOptions))
   }
+  $scope.addLife = function (life) {
+    console.log('life sources', life)
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/Aten/favorites.json`, JSON.stringify(life))
+  }
 })

@@ -9,6 +9,7 @@
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">{{book.title}}<i class="material-icons right">more_vert</i></span>
       <p><a href="{{book.url}}">More Info</a></p>
+      <i class="medium material-icons" ng-click="addToUserPage(book)">queue</i>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -28,19 +29,19 @@
             <!-- Title -->
       <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
-        <input ng-model="titleTextBox" type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+        <input ng-model="titleTextBox" type="text" class="form-control" id="title" placeholder="">
       </div>
 
             <!-- source URL -->
       <div class="form-group">
         <label for="exampleInputPassword1">URL</label>
-        <input ng-model="urlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+        <input ng-model="urlTextBox" type="text" class="form-control" id="url" placeholder="">
       </div>
 
               <!-- image URL -->
       <div class="form-group">
         <label for="exampleInputPassword1">Image URL</label>
-        <input ng-model="imgUrlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+        <input ng-model="imgUrlTextBox" type="text" class="form-control" id="image" placeholder="">
       </div>
 
              <!-- submit button to create new content -->

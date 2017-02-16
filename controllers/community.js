@@ -25,4 +25,9 @@ app.controller('CommunityCtrl', function($scope, $location, $http, communityFact
       console.log(data)
     })
   }
+
+  $scope.addCommunity = function (value) {
+    console.log('community button pressed', value)
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/Aten/favorites.json`, JSON.stringify(value))
+  }
 })
