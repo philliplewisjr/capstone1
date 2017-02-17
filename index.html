@@ -8,11 +8,12 @@
 <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="main.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 <body ng-app='stillwatersApp'>
 <!-- Navbar -->
+<div class="navbar-fixed">
  <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper lime darken-4">
       <a href="#" class="brand-logo right">Still Waters</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="/">General</a></li>
@@ -20,6 +21,9 @@
       </ul>
     </div>
   </nav>
+</div>
+<div ng-controller="LoginCtrl" style="background-image: url({{bgimg}})">
+</div>
   <!-- Navbar closed -->
 
   <div ng-view>

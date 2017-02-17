@@ -1,6 +1,4 @@
-.col {
-  height: 800px;
-}
+
 
 /*.card {
   margin-top: 100px;
@@ -20,6 +18,10 @@
 }
 .sources {
   margin-right: 100px;
+}
+.writingFont {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 30px;
 }
 
 .verticalLine {
@@ -49,18 +51,34 @@
 
 .interest {
   border: .1px solid grey;
-  min-height: 300px;
-  min-width: 500px;
+  max-height: 300px;
+  max-width: 500px;
   margin-top: 20px;
   overflow: auto;
 }
 
-/*.frame {
+.login {
   border: .1px solid grey;
-  min-height: 200px;
-  min-width: 300px;
-  margin-top: 20px;
-}*/
+  max-height: 700px;
+  max-width: 600px;
+  margin-left: 100px;
+  padding-right: 50px;
+  margin-top: 100px;
+  border-radius: 2.5%;
+  border-color: rgb(118, 132, 71);;
+}
+
+.loginBackground {
+  max-height: 100%;
+  max-width: 100%;
+}
+#background {
+  background-image: url(/img/capstonebackground.jpg);
+}
+
+.inlineLogin {
+  margin-top: 10px;
+}
 
 .journal {
   border: .1px solid grey;
