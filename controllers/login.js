@@ -3,6 +3,10 @@
 app.controller('LoginCtrl', function($scope, $location) {
   //console.log('Login in controller')
   $scope.bgimg = "/img/capstonebackground.jpg";
+  
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
 
   $scope.login = function () {
       $('#modal2').modal({
