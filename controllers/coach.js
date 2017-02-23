@@ -17,6 +17,7 @@ app.controller('CoachCtrl', function($scope, $location, coachingFactory, $http){
     console.log(headCoach)
     $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/Coaching.json`, JSON.stringify(headCoach))
   }
+  //add to user favorites
   $scope.addCoach = function (coach) {
     console.log('add coach button pressed', coach)
     $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/Aten/favorites.json`, JSON.stringify(coach))

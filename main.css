@@ -37,6 +37,7 @@
   border-top-width: .1px;
   border-bottom: solid grey;
   border-bottom-width: .1px;
+  background-image: url("/img/ichingqq.jpg");
 }
 
 .fixed {
@@ -65,15 +66,29 @@
   padding-right: 50px;
   margin-top: 75px;
   border-radius: 2.5%;
+  border-color: rgb(118, 132, 71);
+  text-decoration: rgb(118, 132, 71);
+  background-color: black;
+}
+
+.journalModal {
+  border: .1px solid grey;
+  max-height: 400px;
+  max-width: 600px;
+  margin-left: 100px;
+  padding-right: 50px;
+  margin-top: 75px;
+  border-radius: 2.5%;
   border-color: rgb(118, 132, 71);;
+  background-image: url("/img/journalentrybackground.jpg");
+  opacity: .5;
+  color: white;
+  font-family: "Shadows Into Light", cursive;
 }
 
 .loginBackground {
   max-height: 100%;
   max-width: 100%;
-}
-#background {
-  background-image: url(/img/capstonebackground.jpg);
 }
 
 .inlineLogin {
@@ -102,4 +117,16 @@
 
 .east {
   margin-left: 10px;
+}
+
+.thePath {
+  margin-left: 550px;
+  font-family: 'Dancing Script', cursive;
+}
+.generalpage {
+  margin-left: 70px;
+}
+
+#textarea {
+  z-index: auto;
 }

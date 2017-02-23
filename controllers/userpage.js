@@ -15,6 +15,7 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
 
   //graph stat tracker
   $scope.labels = ['Meditation', 'LifeStyle', 'Coaching', 'Community'];
+  $scope.color = ['#768447', '#8a2be2', '#7fff00', '#b22222'];
 
   statFactory.getStats()
   .then((status)=>{
@@ -64,25 +65,10 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
     $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/journal.json`, JSON.stringify(entry))
   }
 
-  //edit journal
-  $scope.editJournal = function (key){
-
-    //console.log('edit button clicked')
-    $scope.key = key
-    console.log(key)
-    if ($scope.editing === true) {
-      $scope.editing = false
-    }
-      else if ($scope.editing === false) {
-        $scope.editing = true;
-      }
-    }
-
+    //save edited journal entry
     $scope.save = function (key, value) {
       $scope.key = key
       console.log(value)
-
-
 
       console.log("key", key)
       $http.patch(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/journal/${key}.json`, JSON.stringify(value))
@@ -104,10 +90,12 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
 
 
     let today = new Date()
+    let date = today.toDateString()
+    console.log(date)
 
   //posting stat data to firebase
    $scope.checkboxModel = {
-      date: today,
+      date: date,
       community:  0,
       meditation:  0,
       lifeStyle:  0,

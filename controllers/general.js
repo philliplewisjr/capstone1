@@ -3,6 +3,8 @@
 app.controller('GeneralCtrl', function($scope, $location, $interval) {
   console.log('general controller')
 
+
+
   $scope.toMeditationPage = ()=> {
     console.log('button clicked')
     $location.path('/meditation')
@@ -23,7 +25,7 @@ app.controller('GeneralCtrl', function($scope, $location, $interval) {
     $location.path('/community')
   }
 
-  //interval through fruit with $interval
+  //interval through Nobel Eightfold Path with $interval
   var items = ['Right Thought', 'Right Effort', 'Right Livelihood', 'Right Mindfulness', 'Right Speech', 'Right Effort', 'Right Concentration'];
   $scope.itemIndex = null;
   $scope.currentItem = '';

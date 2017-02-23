@@ -9,19 +9,62 @@
 <link rel="stylesheet" href="main.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
 <body ng-app='stillwatersApp'>
+
 <!-- Navbar -->
-<div class="navbar-fixed">
- <nav>
-    <div class="nav-wrapper lime darken-4">
-      <a href="#" class="brand-logo right">Still Waters</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="/">General</a></li>
-        <li><a href="/#/login">Login</a></li>
-      </ul>
+<div ng-controller="LoginCtrl">
+  <div class="navbar-fixed">
+   <nav>
+      <div class="nav-wrapper lime darken-4">
+        <a href="#" class="brand-logo right">Still Waters</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a ng-click="generalInfo()">General</a></li>
+          <li><a ng-click="open()" data-target="modal2">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <h1 class="thePath">{{currentItem}}</h1>
+  <div id="homeView" class="parallax-container">
+      <div class="parallax"><img src="/img/capstonebackground.jpg"></div>
     </div>
-  </nav>
 </div>
+
+<!-- login modal -->
+
+ <div id="modal2" class="modal login">
+    <div class="row valign-wrapper inlineLogin">
+        <form class="col s10">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" ng-model="passWord">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" ng-model="eMail">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <a class="left waves-effect waves-light btn" ng-click="login()">LOGIN</a>
+          <a class="right waves-effect waves-light btn">Register</a>
+        </form>
+      </div>
+  </div>
+
 
   <!-- Navbar closed -->
 
@@ -33,13 +76,16 @@
 
 
 
-
+    <!-- angular -->
   <script src="/lib/angular/angular.min.js"></script>
   <script src="/lib/angular-route/angular-route.min.js"></script>
+  <script src="/lib/firebase/firebase.js"></script>
   <script src="/lib/jquery/dist/jquery.js"></script>
   <script src="/lib/materialize/dist/js/materialize.js"></script>
   <script src="app.js" type="text/javascript"></script>
   <script src="/config.js"></script>
+  <!-- audio -->
+  <script src="/lib/howler.js/dist/howler.js"></script>
   <!-- chart data -->
   <script src="/lib/chart.js/dist/Chart.min.js"></script>
   <script src="/lib/angular-chart.js/dist/angular-chart.min.js"></script>
@@ -51,6 +97,7 @@
   <script src="/factory/journalFactory.js"></script>
   <script src="/factory/statFactory.js"></script>
   <script src="/factory/myLikesFactory.js"></script>
+  <script src="/factory/authFactory.js"></script>
                         <!-- controllers -->
   <script src="/controllers/coach.js" type="text/javascript"></script>
   <script src="/controllers/community.js" type="text/javascript"></script>
