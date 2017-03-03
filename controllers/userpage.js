@@ -1,6 +1,6 @@
 
 
-app.controller('UserCtrl', function($scope, $location, $http, journalFactory, statFactory, favoriteFactory) {
+app.controller('UserCtrl', function($scope, $location, $http, journalFactory, statFactory, favoriteFactory, authFactory) {
   console.log('user controller')
   journalFactory.getJournal()
   .then((data)=>{
@@ -10,6 +10,8 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
     $scope.entries = journalEntries;
 
   })
+
+  let user1 = authFactory.getUID()
   $scope.editing = true;
   $scope.editMode = true;
 
@@ -36,7 +38,6 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
 
   //modal for submitting journal entry
   $scope.openJournal =  function () {
-    //$('#modal1').modal('open');
     $('#modal1').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
@@ -62,7 +63,23 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
       date: today
     }
 
-    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/journal.json`, JSON.stringify(entry))
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/journal.json`, JSON.stringify(entry))
+    .then((data)=>{
+      console.log(data)
+      $http.get(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/journal.json`)
+      .then((data)=>{
+        console.log(data)
+      })
+      journalFactory.getJournal()
+        .then((data)=>{
+          console.log(data.data)
+          let journalEntries = data.data;
+          console.log(journalEntries)
+          $scope.entries = journalEntries;
+
+        })
+    })
+    $('#modal1').modal('close');
   }
 
     //save edited journal entry
@@ -71,10 +88,10 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
       console.log(value)
 
       console.log("key", key)
-      $http.patch(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/journal/${key}.json`, JSON.stringify(value))
+      $http.patch(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/journal/${key}.json`, JSON.stringify(value))
       .then((data)=>{
         console.log(data)
-        $http.get(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/journal.json`)
+        $http.get(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/journal.json`)
         .then((data)=>{
           console.log(data.data)
           let journalEntries = data.data;
@@ -104,29 +121,30 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
    $scope.checkboxValue = function () {
     let stats = $scope.checkboxModel;
 
-    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/stats/.json`, JSON.stringify(stats))
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/stats/.json`, JSON.stringify(stats))
     .then((data)=>{
       console.log("post", data)
-    $http.get(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/stats/.json`)
-    .then((data)=>{
-      console.log("get", data)
-    })
-    })
-    statFactory.getStats()
-    .then((status)=>{
+      $http.get(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/stats/.json`)
+      .then((data)=>{
+        console.log("get", data)
+      })
+      statFactory.getStats()
+      .then((status)=>{
 
-      //console.log("object list", status.data)
-      let statNumbers = [0, 0, 0, 0]
-      for(let i in status.data) {
-        console.log(status.data[i].meditation)
-        statNumbers[0] = statNumbers[0] + status.data[i].meditation
-        statNumbers[1] = statNumbers[1] + status.data[i].lifeStyle
-        statNumbers[2] = statNumbers[2] + status.data[i].coaching
-        statNumbers[3] = statNumbers[3] + status.data[i].community
-      }
+        //console.log("object list", status.data)
+        let statNumbers = [0, 0, 0, 0]
+        for(let i in status.data) {
+          console.log(status.data[i].meditation)
+          statNumbers[0] = statNumbers[0] + status.data[i].meditation
+          statNumbers[1] = statNumbers[1] + status.data[i].lifeStyle
+          statNumbers[2] = statNumbers[2] + status.data[i].coaching
+          statNumbers[3] = statNumbers[3] + status.data[i].community
+        }
 
-         $scope.data = statNumbers;
+           $scope.data = statNumbers;
+      })
     })
+    $("#form1").removeAttr("checked")
    }
 
    //getting favorites from firebase and posting
@@ -139,10 +157,12 @@ app.controller('UserCtrl', function($scope, $location, $http, journalFactory, st
     $scope.userFavorites = userFav
 
   })
+ 
+ //deleting favorites
   $scope.deleteSource = function (key) {
     $scope.key = key
     console.log("delete button clicked", $scope.key)
-    $http.delete(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/Aten/favorites/${key}.json`)
+    $http.delete(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/favorites/${key}.json`)
     .then((data)=>{
       console.log(data)
     })

@@ -1,6 +1,6 @@
 
 
-app.controller('CommunityCtrl', function($scope, $location, $http, communityFactory){
+app.controller('CommunityCtrl', function($scope, $location, $http, communityFactory, authFactory){
   console.log('community controller')
   communityFactory.getCommunity()
   .then((data)=> {
@@ -25,9 +25,10 @@ app.controller('CommunityCtrl', function($scope, $location, $http, communityFact
       console.log(data)
     })
   }
-
+  let user1 = authFactory.getUID()
+  console.log(user1.uid)
   $scope.addCommunity = function (value) {
     console.log('community button pressed', value)
-    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/Aten/favorites.json`, JSON.stringify(value))
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/favorites.json`, JSON.stringify(value))
   }
 })

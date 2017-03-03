@@ -1,7 +1,7 @@
 
 
 
-app.controller('MeditationCtrl', function($scope, $location, meditationFactory, $http) {
+app.controller('MeditationCtrl', function($scope, $location, meditationFactory, $http, authFactory) {
   console.log('Meditation controller')
   meditationFactory.getData()
   .then((data)=> {
@@ -45,9 +45,11 @@ app.controller('MeditationCtrl', function($scope, $location, meditationFactory, 
     // })
 
   };
+  let user1 = authFactory.getUID()
+  console.log(user1.uid)
   $scope.addToUserPage = function (book) {
     console.log("delete button pressed")
     console.log(book)
-    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/Aten/favorites.json`, JSON.stringify(book))
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/favorites.json`, JSON.stringify(book))
   }
 })

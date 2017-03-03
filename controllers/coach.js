@@ -1,5 +1,5 @@
 
-app.controller('CoachCtrl', function($scope, $location, coachingFactory, $http){
+app.controller('CoachCtrl', function($scope, $location, coachingFactory, $http, authFactory){
   coachingFactory.getCoach()
   .then((data)=>{
     console.log(data.data)
@@ -17,9 +17,11 @@ app.controller('CoachCtrl', function($scope, $location, coachingFactory, $http){
     console.log(headCoach)
     $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/Coaching.json`, JSON.stringify(headCoach))
   }
+  let user1  = authFactory.getUID()
+  console.log(user1.uid)
   //add to user favorites
   $scope.addCoach = function (coach) {
     console.log('add coach button pressed', coach)
-    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/Aten/favorites.json`, JSON.stringify(coach))
+    $http.post(`https://still-waters-cfd33.firebaseio.com/-KcU7nxNmA0uHzvW0aXu/users/${user1.uid}/favorites.json`, JSON.stringify(coach))
   }
 })

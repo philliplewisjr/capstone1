@@ -15,7 +15,7 @@
       </div>
       <!-- Journal Log -->
       <div class="journal">
-        <div data-ng-repeat="(key, value) in entries" class="{{key}}">
+        <div data-ng-repeat="(key, value) in entries" class="{{key}} logs">
           <div ng-show="editMode" id="note">
             <h5 ng-model="value.title">{{value.title}}</h5>
             <p ng-model="value.entry">{{value.entry}}</p>
@@ -30,8 +30,8 @@
       </div>
       <a ng-click="openJournal()" class="waves-effect waves-light btn" data-target="modal1">Journal Entry</a>
     <!-- Modal Structure -->
-          <div id="modal1" class="modal row">
-            <form class="col s12 journalModal">
+          <div id="modal1" class="modal row journalModal">
+            <form class="col s12 ">
               <div class="row inlineLogin valign-wrapper">
                 <div class="input-field col s12">
                   <textarea id="textarea1" class="materialize-textarea" data-ng-model="journalEntry"></textarea>
@@ -50,7 +50,7 @@
           chart-data="data" chart-labels="labels" chart-colors="color">
         </canvas>
         <div name="dailyStats">
-          <form ng-submit="checkboxValue()">
+          <form id="form1" ng-submit="checkboxValue()">
             <p>
               <input type="checkbox" id="test5" ng-model="checkboxModel.meditation" ng-true-value="100" ng-false-value="0"/>
               <label for="test5">Meditation</label>

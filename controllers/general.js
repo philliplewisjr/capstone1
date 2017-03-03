@@ -1,7 +1,8 @@
 
 
-app.controller('GeneralCtrl', function($scope, $location, $interval) {
+app.controller('GeneralCtrl', function($scope, $location, $interval, user0) {
   console.log('general controller')
+  console.log(user0)
 
 
 
