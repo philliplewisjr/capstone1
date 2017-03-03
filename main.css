@@ -1,0 +1,139 @@
+
+
+/*.card {
+  margin-top: 100px;
+}*/
+
+.general {
+  borger-right: solid grey;
+  border-left: solid grey;
+  border-top: solid grey;
+  border-bottom: solid grey;
+}
+
+.resources {
+  max-height: 1000px;
+  max-width: 400px;
+  overflow: auto;
+}
+.sources {
+  margin-right: 100px;
+}
+.writingFont {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 30px;
+}
+
+.verticalLine {
+  backgroud-color: black;
+  height: 800px;
+  border-left: solid grey;
+  border-left-width: .1px;
+  min-height: 500px;
+  margin-right: auto;
+  border-right: solid grey;
+  border-right-width: .1px;
+  border-top: solid grey;
+  border-top-width: .1px;
+  border-bottom: solid grey;
+  border-bottom-width: .1px;
+  background-image: url("/img/ichingqq.jpg");
+}
+
+.fixed {
+  margin-left: 50px;
+}
+
+/*.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}*/
+
+.interest {
+  border: .1px solid grey;
+  max-height: 300px;
+  max-width: 500px;
+  margin-top: 20px;
+  overflow: auto;
+  border-radius: 2%;
+}
+
+.login {
+  border: .1px solid grey;
+  max-height: 400px;
+  max-width: 600px;
+  margin-left: 100px;
+  padding-right: 50px;
+  margin-top: 75px;
+  border-radius: 2.5%;
+  border-color: rgb(118, 132, 71);
+  text-decoration: rgb(118, 132, 71);
+  background-color: black;
+}
+
+.journalModal {
+  border: .1px solid grey;
+  max-height: 400px;
+  max-width: 600px;
+  margin-left: 100px;
+  padding-right: 50px;
+  margin-top: 75px;
+  border-radius: 2.5%;
+  border-color: rgb(118, 132, 71);;
+  background-image: url("/img/journalentrybackground.jpg");
+  opacity: .5;
+  color: white;
+  font-family: "Shadows Into Light", cursive;
+}
+
+.loginBackground {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.inlineLogin {
+  margin-top: 50px;
+}
+
+.journal {
+  border: .1px solid grey;
+  min-height: 300px;
+  min-width: 500px;
+  margin-top: 100px;
+  border-radius: 3.5%;
+}
+
+.journalButton {
+  margin-top: 70px;
+}
+
+
+.stats {
+  border: .1px solid grey;
+  height: 770px;
+  width: 500px;
+  margin-top: 20px;
+  margin-left: 100px;
+  border-radius: 3.5%;
+}
+
+.east {
+  margin-left: 10px;
+}
+
+.thePath {
+  margin-left: 550px;
+  font-family: 'Dancing Script', cursive;
+}
+.generalpage {
+  margin-left: 70px;
+}
+
+#textarea {
+  z-index: auto;
+}
+
+.logs {
+  margin-left: 15px;
+}

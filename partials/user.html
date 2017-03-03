@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+  <!-- Load user saved interest -->
+    <div class="sources col s5">
+      <div class="interest">
+        <ul class="collection">
+          <li ng-repeat="(key, each) in userFavorites.favorites" class="collection-item avatar" id="key">
+            <img src="{{each.img}}" alt="" class="circle">
+            <span class="title">{{each.title}}</span>
+            <a href="{{each.url}}">More Info</a><br>
+               Second Line
+            <i ng-click="deleteSource(key)" class="material-icons">delete</i>
+          </li>
+        </ul>
+      </div>
+      <!-- Journal Log -->
+      <div class="journal">
+        <div data-ng-repeat="(key, value) in entries" class="{{key}} logs">
+          <div ng-show="editMode" id="note">
+            <h5 ng-model="value.title">{{value.title}}</h5>
+            <p ng-model="value.entry">{{value.entry}}</p>
+          </div>
+          <div data-ng-hide="editMode">
+            <input type="text" ng-model="value.title">
+            <input type="text" ng-model="value.entry">
+          </div>
+           <i data-ng-click="editMode = !editMode; editJournal(key)" class="small material-icons">mode_edit</i>
+          <a class="small waves-effect waves-light " data-ng-click="save(key, value)">Save</a>
+        </div>
+      </div>
+      <a ng-click="openJournal()" class="waves-effect waves-light btn" data-target="modal1">Journal Entry</a>
+    <!-- Modal Structure -->
+          <div id="modal1" class="modal row journalModal">
+            <form class="col s12 ">
+              <div class="row inlineLogin valign-wrapper">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea" data-ng-model="journalEntry"></textarea>
+                  <label for="textarea1">Text Area</label>
+                <input placeholder="Entry Title" id="textarea1" type="text" class="validate" ng-model="journalTitle">
+                  <a ng-click="loggedThoughts()" class="waves-effect waves-light btn">Submit</a>
+                </div>
+              </div>
+            </form>
+          </div>
+    </div>
+<!-- Goal tracker for user -->
+    <div class="stats col s5">
+      <h3>Footsteps</h3>
+        <canvas id="doughnut" class="chart chart-doughnut"
+          chart-data="data" chart-labels="labels" chart-colors="color">
+        </canvas>
+        <div name="dailyStats">
+          <form id="form1" ng-submit="checkboxValue()">
+            <p>
+              <input type="checkbox" id="test5" ng-model="checkboxModel.meditation" ng-true-value="100" ng-false-value="0"/>
+              <label for="test5">Meditation</label>
+            </p>
+            <p>
+              <input type="checkbox" id="test6" ng-model="checkboxModel.lifeStyle" ng-true-value="100" ng-false-value="0"/>
+              <label for="test6">LifeStyle</label>
+            </p>
+            <p>
+              <input type="checkbox" id="test7" ng-model="checkboxModel.coaching" ng-true-value="100" ng-false-value="0"/>
+              <label for="test7">Coaching</label>
+            </p>
+            <p>
+              <input type="checkbox"  id="test8" ng-model="checkboxModel.community" ng-true-value="100" ng-false-value="0"/>
+              <label for="test8">Community</label>
+            </p>
+           <!--  <a class="waves-effect waves-light btn"> -->
+           <input type="submit" class="waves-effect waves-light btn lime darken-4">
+        </form>
+    </div>
+  </div>
+  </div>
+</div>

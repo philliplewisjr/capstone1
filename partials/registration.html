@@ -1,0 +1,29 @@
+<div class="login">
+    <div class="row valign-wrapper inlineLogin">
+        <form class="col s10">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate" ng-model="firstName">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate" ng-model="lastName">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" ng-model="passWord">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" ng-model="eMail">
+              <label for="email">Email</label>
+            </div>
+          </div>
+        </form>
+      </div>
+<a class="waves-effect waves-light btn" ng-click="register()">Register</a>
+  </div>
